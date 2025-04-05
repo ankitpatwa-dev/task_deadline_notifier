@@ -8,7 +8,7 @@ It helps ensure timely task completion and better team accountability.
     """,
     'author': "Ankit",
     'category': 'project',
-    'version': '18.0',
+    'version': '18.0.1',
     'license': 'LGPL-3',
     'depends': ['base','project'],
     'data': [
