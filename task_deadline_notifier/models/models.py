@@ -19,6 +19,5 @@ class TaskDeadlineNotifier(models.Model):
     def _notify_users(self, task):
         mail_template = self.env.ref('task_deadline_notifier.email_template_task_deadline')
         for user in task.user_ids:
-            print(user)
             mail_template.send_mail(task.id, force_send=True)
 
