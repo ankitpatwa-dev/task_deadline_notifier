@@ -13,12 +13,11 @@ class TaskDeadlineNotifier(models.Model):
         ])
 
         for task in tasks:
-            if task.date_deadline.date() in [today, today + timedelta(days=1)]:
+            if task.date_deadline in [today, today + timedelta(days=1)]:
                 self._notify_users(task)
 
     def _notify_users(self, task):
         mail_template = self.env.ref('task_deadline_notifier.email_template_task_deadline')
         for user in task.user_ids:
-            print(user)
             mail_template.send_mail(task.id, force_send=True)
 
